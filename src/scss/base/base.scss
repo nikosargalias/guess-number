@@ -1,0 +1,29 @@
+html {
+  font-size: 62.5%;
+
+  @media (max-width: 900px) {
+    font-size: 50%;
+  }
+}
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #555;
+  font-family: "Press Start 2P", sans-serif;
+  font-size: 2rem;
+  padding: 1rem;
+  color: white;
+  line-height: 1.6;
+  letter-spacing: 1px;
+}
+
+h1 {
+  line-height: 1.3;
+}

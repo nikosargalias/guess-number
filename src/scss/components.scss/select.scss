@@ -1,0 +1,53 @@
+.difficulty {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  max-width: 90vw;
+
+  @media (max-width: 900px) {
+    align-items: center;
+  }
+
+  &__select-wrapper {
+    margin-top: 1rem;
+    position: relative;
+    max-width: 90%;
+    width: 300px;
+
+    &::after {
+      content: "\21CA";
+      position: absolute;
+      color: white;
+      font-size: 3rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding-bottom: 1rem;
+      top: 0;
+      right: 0;
+      z-index: 10;
+      background: #333;
+      height: 100%;
+      width: 4rem;
+      pointer-events: none;
+    }
+  }
+
+  &__select {
+    height: 100%;
+    width: 100%;
+
+    padding: 1rem;
+    font-size: 1rem;
+    font-family: inherit;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    &-option {
+      font-size: 1.6rem;
+      font-family: inherit;
+    }
+  }
+}

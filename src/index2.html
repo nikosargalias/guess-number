@@ -11,11 +11,10 @@
     />
     <title>Document</title>
   </head>
-  <body class="">
-    <main class="game">
-      <button id="start-game" class="game__start btn">Start Game</button>
-
-      <label class="game__difficulty difficulty">
+  <body class="game">
+    <header class="game__header game-init">
+      <button id="start-game" class="game-init__start btn">Start Game</button>
+      <label class="game-init__num-range difficulty">
         Choose Difficulty:
         <div class="difficulty__select-wrapper">
           <select id="difficulty" class="difficulty__select" name="" id="">
@@ -31,19 +30,21 @@
           </select>
         </div>
       </label>
+      <h1 class="game-init__heading heading">Guess My Number!</h1>
+    </header>
 
-      <h1 class="game__heading heading">Guess My Number!</h1>
+    <div class="game__number game-number"><p id="hidden-num">?</p></div>
 
-      <div class="game__number game-number"><p id="hidden-num">?</p></div>
-      <div class="game__on">
-        <form id="make-guess" class="game__form form">
+    <main class="game__body">
+      <div class="game-on">
+        <form id="make-guess" class="game-on__form form">
           <input type="number" name="guess" id="" class="form__input" />
           <button type="submit" class="form__btn btn">Check!</button>
         </form>
-        <div class="game__state">
+        <div class="game-on__state">
           <p id="game-state">Start game</p>
-          <p id="guesses-remaining">💯 Guesses remaining: N/A</p>
-          <p id="high-score">🥇 High score: 0</p>
+          <p id="guesses-remaining">Guesses remaining: N/A</p>
+          <p id="high-score">High score: 0</p>
         </div>
       </div>
     </main>

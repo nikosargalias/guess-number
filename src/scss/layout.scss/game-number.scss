@@ -1,0 +1,28 @@
+.game-number {
+  // width: 100vw;
+  width: 100%;
+  // justify-self: stretch;
+  text-align: center;
+  display: grid;
+  grid-template-columns: 1fr max-content 1fr;
+  align-items: center;
+  justify-items: center;
+
+  p {
+    color: black;
+    font-size: 5rem;
+    padding: 3rem 7rem;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &::before,
+  &::after {
+    width: 100%;
+    height: 10px;
+    background: white;
+    content: "";
+    display: inline-block;
+  }
+}

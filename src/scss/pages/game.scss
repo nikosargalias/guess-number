@@ -1,0 +1,133 @@
+.game {
+  // border: 2px solid blue;
+  display: grid;
+  // grid-template-columns:
+  //   0.5fr
+  //   repeat(2, minmax(min-content, 1fr))
+  //   0.5fr;
+
+  grid-template-areas:
+    "start-game . difficulty"
+    "heading heading heading"
+    "hidden-num hidden-num hidden-num"
+    "game-on game-on game-on";
+
+  align-items: center;
+  min-height: 100vh;
+  width: 1100px;
+  max-width: 90vw;
+  margin: 0 auto;
+  row-gap: $gutter-large;
+
+  &__start {
+    min-width: max-content;
+    justify-self: start;
+    grid-area: start-game;
+  }
+  &__difficulty {
+    text-align: end;
+    justify-self: end;
+    grid-area: difficulty;
+  }
+  &__heading {
+    justify-self: center;
+    grid-area: heading;
+  }
+  &__number {
+    grid-area: hidden-num;
+  }
+
+  &__on {
+    grid-area: game-on;
+    width: 90%;
+    justify-self: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (max-width: 900px) {
+      flex-direction: column;
+    }
+  }
+
+  &__state {
+    min-width: auto;
+    text-align: end;
+
+    & > :not(:last-child) {
+      margin-bottom: 1rem;
+    }
+  }
+
+  @media (max-width: 900px) {
+    grid-template-areas:
+      "heading"
+      "start-game"
+      "difficulty"
+      "hidden-num"
+      "game-on";
+    justify-items: center;
+    align-items: center;
+
+    &__start {
+      justify-self: center;
+    }
+
+    &__difficulty {
+      text-align: center;
+      justify-self: center;
+    }
+
+    &__heading {
+      text-align: center;
+    }
+
+    &__state {
+      order: -1;
+      text-align: center;
+      margin-bottom: $gutter-large;
+    }
+  }
+  // &__form {
+  //   justify-self: start;
+  //   grid-column: 2 / 4;
+  //   grid-row: 4 / 5;
+  //   border: 1px solid blue;
+  // }
+  // &__state {
+  //   width: 100%;
+  //   justify-self: end;
+  //   text-align: end;
+  //   grid-column: 4 / 6;
+  //   grid-row: 4 / 5;
+  //   border: 1px solid blue;
+  // }
+}
+
+// .game {
+//   padding: 10rem;
+//   display: flex;
+//   flex-direction: column;
+//   align-items: center;
+//   justify-content: center;
+//   min-height: 100vh;
+
+//   &__header {
+//     margin-bottom: 10rem;
+//   }
+//   &__number {
+//     margin-bottom: 10rem;
+//   }
+
+//   &__body {
+//   }
+
+//   @media (max-width: 900px) {
+//     &__header {
+//       margin-bottom: 5rem;
+//     }
+//     &__number {
+//       margin-bottom: 5rem;
+//     }
+//   }
+// }

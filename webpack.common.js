@@ -29,4 +29,12 @@ module.exports = {
       },
     ],
   },
+  // resolve: {
+  //   // ... rest of the resolve config
+  //   fallback: {
+  //     path: require.resolve("path-browserify"),
+  //     util: require.resolve("util/"),
+  //     stream: require.resolve("stream-browserify"),
+  //   },
+  // },
 };
