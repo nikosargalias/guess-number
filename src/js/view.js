@@ -38,6 +38,10 @@ function renderLostPoint() {
     gameData.lastNumGuessed > gameData.hiddenNum ? "Too high" : "Too low";
 }
 
+function renderDuplicateGuess() {
+  gameState.textContent = "You've already guessed this number";
+}
+
 function clearTextContentAndFocus(element) {
   element.value = "";
   element.focus();
@@ -60,4 +64,5 @@ export {
   clearTextContentAndFocus,
   renderNewGameData,
   renderHighScore,
+  renderDuplicateGuess,
 };

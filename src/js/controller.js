@@ -23,6 +23,7 @@ import {
   renderLostPoint,
   clearTextContentAndFocus,
   renderNewGameData,
+  renderDuplicateGuess,
 } from "./view";
 import {
   saveGameToLocalStorage,
@@ -83,7 +84,8 @@ makeGuess.addEventListener("submit", (e) => {
   }
 
   if (gameData.guessHistory.includes(guess)) {
-    alert("You've already guessed this number");
+    renderDuplicateGuess();
+    // alert("You've already guessed this number");
     clearTextContentAndFocus(inputElem);
     return;
   }
