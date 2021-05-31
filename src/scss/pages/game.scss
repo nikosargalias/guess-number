@@ -5,6 +5,7 @@
   //   0.5fr
   //   repeat(2, minmax(min-content, 1fr))
   //   0.5fr;
+  padding: 2rem 0;
 
   grid-template-areas:
     "start-game . difficulty"
@@ -83,8 +84,12 @@
     }
 
     &__state {
-      order: -1;
+      // order: -1;
       text-align: center;
+      // margin-bottom: $gutter-large;
+    }
+
+    &__form {
       margin-bottom: $gutter-large;
     }
   }
