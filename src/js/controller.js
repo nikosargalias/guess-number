@@ -8,6 +8,7 @@ import {
   returnLatestGameState,
   resetGameData,
   clearhighScoreStorage,
+  updateLastNumGuessed,
   //   isNewHighScore,
 } from "./gameData";
 import { isGuessValid } from "./validation";
@@ -103,7 +104,8 @@ function processGuess(guess) {
 
   if (guess != gameData.hiddenNum) {
     removePoint();
-    renderLostPoint(gameData);
+    updateLastNumGuessed(guess);
+    renderLostPoint();
   } else {
     gameIsWon();
     renderGameIsWon(gameData);

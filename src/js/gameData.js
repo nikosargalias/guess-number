@@ -17,6 +17,12 @@ function updateGuessedHistory(guess) {
   });
 }
 
+function updateLastNumGuessed(guess) {
+  updateGameData((gameData) => {
+    gameData.lastNumGuessed = guess;
+  });
+}
+
 function gameIsWon() {
   updateGameData((gameData) => {
     gameData.isWon = true;
@@ -59,6 +65,7 @@ function clearhighScoreStorage() {
 }
 
 export {
+  updateLastNumGuessed,
   beginGame,
   updateGuessedHistory,
   updateHighScore,
