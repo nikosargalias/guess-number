@@ -9,4 +9,15 @@ button {
   padding: 1.8rem 2rem;
   background-color: white;
   color: black;
+  transition: all 0.2s;
+
+  &:hover {
+    cursor: pointer;
+    opacity: 0.9;
+    transform: scale(1.02);
+  }
+
+  &:active {
+    transform: scale(0.98);
+  }
 }
