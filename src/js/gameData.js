@@ -6,8 +6,8 @@ import {
   loadHighScoreLocalStorage,
 } from "./local-storage";
 
-function beginGame() {
-  const gameData = new GameState(difficulty.value);
+function beginGame(difficulty) {
+  const gameData = new GameState(difficulty);
   saveGameToLocalStorage(gameData);
 }
 

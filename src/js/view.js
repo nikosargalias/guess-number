@@ -1,8 +1,6 @@
 import { returnLatestGameState } from "./gameData";
 
 const heading = document.querySelector("#game__heading");
-const startGameBtn = document.querySelector("#start-game");
-const difficulty = document.querySelector("#difficulty");
 const gameState = document.querySelector("#game-state");
 const makeGuess = document.querySelector("#make-guess");
 const guessesRemaining = document.querySelector("#guesses-remaining");

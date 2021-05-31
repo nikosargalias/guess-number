@@ -35,6 +35,7 @@ import {
 const startGameBtn = document.querySelector("#start-game");
 const makeGuess = document.querySelector("#make-guess");
 const clearScoreBtn = document.querySelector("#clear-score");
+const difficulty = document.querySelector("#difficulty");
 
 // On page reload ---
 renderHighScore(loadHighScoreLocalStorage());
@@ -52,9 +53,8 @@ function clearHighScore() {
 }
 
 function newGameCallback() {
-  beginGame();
+  beginGame(difficulty.value);
   renderNewGameData();
-  //   console.log(gameData.hiddenNum);
 }
 
 makeGuess.addEventListener("submit", (e) => {
