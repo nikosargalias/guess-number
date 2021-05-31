@@ -1,8 +1,8 @@
 html {
-  font-size: 62.5%;
+  font-size: 55%;
 
   @media (max-width: 900px) {
-    font-size: 50%;
+    font-size: 45%;
   }
 }
 
@@ -16,9 +16,10 @@ html {
 
 body {
   background-color: #555;
+  background-color: rgb(94, 3, 3);
+  background-color: rgb(23, 3, 94);
   font-family: "Press Start 2P", sans-serif;
   font-size: 2rem;
-  padding: 1rem;
   color: white;
   line-height: 1.6;
   letter-spacing: 1px;

@@ -1,11 +1,6 @@
 .game {
-  // border: 2px solid blue;
   display: grid;
-  // grid-template-columns:
-  //   0.5fr
-  //   repeat(2, minmax(min-content, 1fr))
-  //   0.5fr;
-  padding: 2rem 0;
+  padding: 2rem;
 
   grid-template-areas:
     "start-game . difficulty"
@@ -108,31 +103,3 @@
   //   border: 1px solid blue;
   // }
 }
-
-// .game {
-//   padding: 10rem;
-//   display: flex;
-//   flex-direction: column;
-//   align-items: center;
-//   justify-content: center;
-//   min-height: 100vh;
-
-//   &__header {
-//     margin-bottom: 10rem;
-//   }
-//   &__number {
-//     margin-bottom: 10rem;
-//   }
-
-//   &__body {
-//   }
-
-//   @media (max-width: 900px) {
-//     &__header {
-//       margin-bottom: 5rem;
-//     }
-//     &__number {
-//       margin-bottom: 5rem;
-//     }
-//   }
-// }

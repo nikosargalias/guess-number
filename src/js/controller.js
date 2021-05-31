@@ -11,7 +11,11 @@ import {
   updateLastNumGuessed,
   //   isNewHighScore,
 } from "./gameData";
-import { isGuessValid } from "./validation";
+import {
+  isGuessValidNumber,
+  isGuessCorrect,
+  isGuessesRunOut,
+} from "./validation";
 import {
   renderHighScore,
   renderGameIsLost,
@@ -26,16 +30,9 @@ import {
   loadHighScoreLocalStorage,
 } from "./local-storage";
 
-// Get game object
-let gameData;
-
+// DOm Elements for Event Listeners
 const startGameBtn = document.querySelector("#start-game");
-const difficulty = document.querySelector("#difficulty");
-const gameState = document.querySelector("#game-state");
 const makeGuess = document.querySelector("#make-guess");
-const guessesRemaining = document.querySelector("#guesses-remaining");
-const highScore = document.querySelector("#high-score");
-const hiddenNum = document.querySelector("#hidden-num");
 const clearScoreBtn = document.querySelector("#clear-score");
 
 // On page reload ---
@@ -55,9 +52,8 @@ function clearHighScore() {
 
 function newGameCallback() {
   beginGame();
-  const gameData = returnLatestGameState();
-  renderNewGameData(gameData);
-  console.log(gameData.hiddenNum);
+  renderNewGameData();
+  //   console.log(gameData.hiddenNum);
 }
 
 makeGuess.addEventListener("submit", (e) => {
@@ -65,8 +61,6 @@ makeGuess.addEventListener("submit", (e) => {
   const gameData = returnLatestGameState();
   const inputElem = e.target.elements.guess;
   const guess = Number(inputElem.value);
-
-  console.log(gameData);
 
   if (!gameData) {
     alert("You need to click Start Game");
@@ -80,7 +74,7 @@ makeGuess.addEventListener("submit", (e) => {
     return;
   }
 
-  if (!isGuessValid(guess, gameData)) {
+  if (!isGuessValidNumber(guess, gameData)) {
     alert(
       "Guess must be a number between the range specified by the difficulty"
     );
@@ -99,21 +93,20 @@ makeGuess.addEventListener("submit", (e) => {
 });
 
 function processGuess(guess) {
-  const gameData = returnLatestGameState();
   updateGuessedHistory(guess);
 
-  if (guess != gameData.hiddenNum) {
+  if (!isGuessCorrect(guess)) {
     removePoint();
     updateLastNumGuessed(guess);
     renderLostPoint();
   } else {
     gameIsWon();
-    renderGameIsWon(gameData);
+    renderGameIsWon();
     updateHighScore();
     renderHighScore(loadHighScoreLocalStorage());
   }
 
-  if (gameData.guessesRemaining <= 0 && !gameData.won) {
-    renderGameIsLost(gameData);
+  if (isGuessesRunOut()) {
+    renderGameIsLost();
   }
 }

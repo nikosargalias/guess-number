@@ -1,5 +1,6 @@
 import { returnLatestGameState } from "./gameData";
 
+const heading = document.querySelector("#game__heading");
 const startGameBtn = document.querySelector("#start-game");
 const difficulty = document.querySelector("#difficulty");
 const gameState = document.querySelector("#game-state");
@@ -18,12 +19,16 @@ function renderGameIsLost() {
   const gameData = returnLatestGameState();
   hiddenNum.textContent = gameData.hiddenNum;
   gameState.textContent = "You Lost...";
+  document.body.classList.add("game-lost");
+  heading.textContent = "You Lost!";
 }
 
 function renderGameIsWon() {
   const gameData = returnLatestGameState();
   gameState.textContent = "You Win!!!";
   hiddenNum.textContent = gameData.hiddenNum;
+  document.body.classList.add("game-won");
+  heading.textContent = "You Won!";
 }
 
 function renderLostPoint() {
@@ -38,11 +43,13 @@ function clearTextContentAndFocus(element) {
   element.focus();
 }
 
-function renderNewGameData(gameData, highScoreValue) {
+function renderNewGameData(highScoreValue) {
+  const gameData = returnLatestGameState();
   hiddenNum.textContent = "?";
   makeGuess.guess.value = "";
   gameState.textContent = "Game on...";
   guessesRemaining.textContent = `Guesses remaining: ${gameData.guessesRemaining}`;
+  document.body.classList.remove("game-won", "game-lost");
 }
 
 export {
