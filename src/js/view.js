@@ -50,6 +50,7 @@ function renderNewGameData(highScoreValue) {
   gameState.textContent = "Game on...";
   guessesRemaining.textContent = `Guesses remaining: ${gameData.guessesRemaining}`;
   document.body.classList.remove("game-won", "game-lost");
+  heading.textContent = "Game On...";
 }
 
 export {
